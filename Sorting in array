@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    // 1 variable to take size of array  [
+    int size;
+    printf("Enter the size of array : ");
+    scanf("%d",&size); //]
+    
+    // 2 Entering elements in array [
+    
+  int n, A[size];
+  for(int i=0;i<size;i++){
+      printf("Enter array element A[%d] : ",i);
+      scanf("%d",&A[i]);
+  }//]
+  
+  // 3 printing  RAW array [
+  
+  printf("Given RAW array is :-\t");
+  for(int i=0;i<size;i++){
+      printf("%d\t",A[i]);
+  }printf("\n"); //]
+  
+  // Sorting Algorithm Applied [
+  
+  for(int i=0;i<size;i++){
+      for(int j=i+1;j<size;j++){
+      if(A[i]>A[j]){
+          n=A[i];
+          A[i]=A[j];
+          A[j]=n; 
+      }
+    }
+ }//]
+ 
+ //Printing Sorted Array [
+  printf("Sorted Array is :-\t");
+for(int i=0;i<size;i++){
+     printf("%d \t",A[i]);
+} //]
+
+//program end
+    return 0;
+}
