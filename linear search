@@ -1,0 +1,40 @@
+#include <stdio.h>
+// search DSA
+int main() {
+    
+// int A[]={1,2,4,78,5,645}; pre filled array
+
+int size;
+printf("Enter size of array = ");
+scanf("%d",&size);
+
+//taking user input array
+
+int A[size];
+for(int i=0;i<=size;i++){
+    printf("enter array element A[%d] = ",i);
+    scanf("%d",&A[i]);
+}
+
+//taking user input search
+
+int search,flag=0;
+printf("Enter number to search = ");
+scanf("%d",&search);
+
+for(int i=0;i<=size;i++){
+    if(A[i]==search){
+        // printf("%d",A[i]);    // to check which number we searched
+        flag=1;
+        break; // it is just to exit the loop after search
+    }
+    else flag=0;
+}
+//loop end
+if(flag==1){
+    printf("< Number found >\n");
+}
+else printf("Number not found !");
+
+    return 0;
+}
