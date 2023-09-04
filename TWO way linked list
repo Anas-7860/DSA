@@ -1,0 +1,50 @@
+DSA NOTES FOR DOUBLY LINKED LIST-
+
+A two way list is a collection of nodes where each node consists of three parts the info part which contain data pointer a forward pointer - which is denoted by forw(it points to the next node ) the backward pointer
+back which points to the preceding node, there are two other pointers first and last the first pointer points to the first node and the last pointer will point to the last node
+the forward pointer of the last node will contain null and the back pointer of the first node will contain null.
+
+REPRENTATION OF TWO WAY LIST :-
+
+A,D,F,G,K,L,M,N,S
+    info       forw         back
+1    
+2   F           6            10
+3   K           9             6
+4   N           11           12 
+5   A           10            X
+6   G           3             2
+7
+8   avail
+9   L           12            3
+10  D           2             5
+11  S           X             4
+12  M           4             9
+
+# Insertion in a two way list:-
+algorithm
+ Instwl( info, forw, back,start,avail, LOCA,LOCB,item)
+1. if avail = NULL then write overflow and return
+
+2. Set New = avail & avail = forw(avail)
+   if info[New] = item
+
+3. Set forw[LOCA] = New
+   forw[New] = LOCB
+   back[LOCB] = New
+   back[New] = LOCA
+
+4. exit()
+
+
+# Deletion in a two way list:-
+algorithm
+
+Deltwl( info, forw, back,start,avail, LOC)
+1. Set forw[back[loc]] = forw[loc] & back[forw[loc]] = back[loc]
+
+2. set forw[loc] = avail & avail = loc
+
+3. exit()
+
+
