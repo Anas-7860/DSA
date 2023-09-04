@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+class node
+{
+    public:
+    int data;
+    node *next;
+};
+
+node *traverse(node *head)
+{
+    for(node *ptr=head;ptr!=NULL;ptr=ptr->next)
+    {
+        cout<<ptr->data<<" ";
+    }
+    cout<<endl;
+}
+
+node *insertBEG(node *head,int data)
+{
+    node *NEW=new node;
+    NEW->data=data;
+    NEW->next=head;
+    return NEW;
+}
+
+node *insertLas(node* third,int data){
+    node* last = new node;
+    third->next = last;
+    last->data = data;
+    last->next = NULL;
+    return last;
+}
+
+int main()
+{
+  node *head=new node;
+  node *second=new node;
+  node *third=new node;
+  head->data=1;
+  head->next=second;
+  second->data=2;
+  second->next=third;
+   third->data=3;
+  third->next=NULL;
+  
+  traverse(head);
+  head=insertBEG(head,10);
+  insertLas(third,50);
+  traverse(head);
+
+    return 0;
+}
