@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a[] = {8, 1, 7, 0, 3};
+    int min, i, temp;
+    for (i = 0; i < 4; i++)
+    {
+        min = i;
+        for (int j = i + 1; j < 5; j++)
+        {
+            if (a[j] < a[min])
+            {
+                min = j;
+            }
+        }
+        temp = a[i];           // or use swap function
+        a[i] = a[min];
+        a[min] = temp;
+    }
+
+    for (i = 0; i < 5; i++)
+    {
+        cout << a[i] << " ";
+    }
+    return 0;
+}
