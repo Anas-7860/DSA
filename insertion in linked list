@@ -1,0 +1,36 @@
+// insertion at end
+#include <iostream>
+using namespace std;
+struct node{
+   int data;
+   node* ptr;
+};
+void insertnode(node* nnode,node* last,node* cont){
+    last->ptr = NULL;
+    last->ptr = nnode;
+    nnode->ptr = cont;
+}
+int main() {
+
+node* head = new node();
+node* n2 = new node();
+node* n3 = new node();
+ 
+head->data = 1;
+head->ptr = n2;
+n2->data = 2;
+n2->ptr = n3;
+n3->data = 3;
+n3->ptr = NULL;
+node* newnode = new node();
+newnode->data = 4;
+newnode->ptr = NULL;
+//insert(new node,beafore newnode, after newnode)
+insertnode(newnode,n3,NULL);
+for(node* i = head;i != NULL;i = i->ptr){
+    cout<< i->data<<' ';
+}
+
+
+    return 0;
+}
