@@ -1,0 +1,39 @@
+// Online C++ compiler to run C++ program online
+// armstrong number
+#include <iostream>
+
+using namespace std;
+int power(int num ,int times){
+    int result=1;
+    while(times!=0){
+        result*=num;
+        times--;
+    }
+    return result;
+}
+int main() {
+    int number ;
+    cout<<"enter number : ";
+    cin>>number;
+    int digit=0;
+    int dup = number;
+    int original_number = number;
+    for(int i=0;number>0 ;i++){
+        number/=10;
+        digit++;
+    }
+    int rem=0,result=0;
+    for(int i=0;dup!=0;i++){
+        rem = dup%10;
+        result+=power(rem,digit);
+        dup/=10;
+    }
+    if(original_number==result){
+        cout<<original_number<<" is a armstrong number";
+    }else{
+         cout<<original_number<<" is not an armstrong number";
+    }
+
+
+    return 0;
+}
